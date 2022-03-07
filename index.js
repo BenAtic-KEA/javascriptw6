@@ -6,7 +6,8 @@ document.getElementById("btn-get-all").onclick = getAllUsers
 function getAllUsers(){
 fetch("https://jsonplaceholder.typicode.com/users")
 .then(res=> res.json())
-.then(data =>{
+.then(data => {
+    console.log(data)
     const rows = data.map(u => `
     <tr>
         <td>${u.name}</td>
