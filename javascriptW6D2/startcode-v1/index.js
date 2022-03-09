@@ -24,23 +24,19 @@ function renderMenuItems(evt) {
       break
     }
     case "sign-up": {
-      setUpPage3Handlers()
-      getAllUsers()
+      //sign up methods
       break
     }
     case "my-details": {
-      setUpPage3Handlers()
-      getAllUsers()
+      //detail methods
       break
     }
     case "login": {
-      setUpPage3Handlers()
-      getAllUsers()
+      // login-logout methods
       break
     }
     case "logout": {
-      setUpPage3Handlers()
-      getAllUsers()
+      // login-logout methods
       break
     }
   }
