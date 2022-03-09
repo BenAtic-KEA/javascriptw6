@@ -30,7 +30,6 @@ function createBeerBody(list){
         </tr>`).join("\n")
         document.getElementById("tbl1").innerHTML = rows
     
-
 }
 
 document.getElementById("abv-btn").onclick = evt => {
