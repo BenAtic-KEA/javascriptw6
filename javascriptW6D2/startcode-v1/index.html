@@ -23,9 +23,16 @@
   <div style="margin-left: 50px;margin-right: auto;width: 80%;" class="vertical-menu">
     <div>
       <ul id="menu" class="menu">
-        <li><a id="page-1" href="#">Page-1</a></li>
-        <li><a id="page-2" href="#">Page-2</a></li>
-        <li><a id="page-3" href="#">Page-3</a></li>
+        <li><a id="about" href="#">About</a></li>
+        <li><a id="our-cars" href="#">See our cars</a></li>
+        <li><a id="add-edit-cars" href="#">add/edit cars</a></li>
+        <li><a id="sign-up" href="#">Sign up as user</a></li>
+        <li><a id="my-details" href="#">My Details</a></li>
+        <li><a id="login-logout" href="#">
+          <span id="login">Login</span>
+          <span id = logout></span>
+          </a>
+        </li>
       </ul>
     </div>
     <div id="content" style="margin-left:15px;"></div>
@@ -38,19 +45,19 @@
   All you templates should be added below
 -->
 
-<template data-id="page-1">
+<template data-id="about">
   <h2>Just Text (HTML) </h2>
   <p>No JavaScript used on this page</p>
   <img src="images/KEA_logo_DK_Web.jpg" style="width: 700px;" alt="kea logo" />
 </template>
 
-<template data-id="page-2">
+<template data-id="our-cars">
   <h2>Page-2</h2>
   <button id="t1-btn1" class="btn btn-primary">Set Content</button>
   <h4 id="t1-content" style="margin-top: 1em;"></h4>
 </template>
 
-<template data-id="page-3">
+<template data-id="add-edit-cars">
   <h2>Page-3</h2>
   <h3>Get all users</h3>
   <p>This is what we did last time in the class</p>
@@ -68,3 +75,13 @@
     </tbody>
   </table>
 </template>
+
+<template data-id="sign-up">
+<header>everyone should be able to sign up on the website</header>
+</template>
+
+<template data-id="my-details">
+  <header>Only logged in users can see this, and </header>
+</template>
+
+<template data-id="login-logout"></template>
