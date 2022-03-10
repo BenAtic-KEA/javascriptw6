@@ -48,26 +48,46 @@
 </template>
 
 <template data-id="our-cars">
-  <h2>Page-2</h2>
-  <button id="t1-btn1" class="btn btn-primary">Set Content</button>
+  <h2>Cars</h2>
+  <button id="t1-btn1" class="btn btn-primary">Refresh List</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>brand</th>
+        <th>model</th>
+        <th>price pr day</th>
+      </tr>
+    </thead>
+    <tbody id="car-rows"></tbody>
+  </table>
   <h4 id="t1-content" style="margin-top: 1em;"></h4>
 </template>
 
 <template data-id="add-edit-cars">
-  <h2>Page-3</h2>
-  <h3>Get all users</h3>
-  <p>This is what we did last time in the class</p>
+  <h2>Add & edit cars</h2>
+  <p>Create new car:</p>
+  <p id="car-id"></p>
+  <input id="input-brand" placeholder="add brand">
+  <input id="input-model" placeholder="add model">
+  <input id="input-price-pr-day" type="number" placeholder="add price pr. day">
+  <input id="input-discount" type="number" placeholder="add best discount in %">
+  <button id="btn-add-car">add Car</button>
+  <br>
   <button id="btn-get-all" class="btn btn-secondary">Get All Users</button>
   <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Street</th>
-        <th>City</th>
+        <th>ID</th>
+        <th>brand</th>
+        <th>model</th>
+        <th>price pr day</th>
+        <th>discount</th>
+        <th>created</th>
+        <th>updated</th>
       </tr>
     </thead>
-    <tbody id="tbl-body">
+    <tbody id="car-admin-rows">
     </tbody>
   </table>
 </template>

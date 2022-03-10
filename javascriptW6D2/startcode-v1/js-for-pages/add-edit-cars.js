@@ -1,27 +1,61 @@
 import { encode } from "../utils.js"
 
+const SERVER_URL =  "http://localhost:8080/api/cars"
 
-export function setUpPage3Handlers() {
-  document.getElementById("btn-get-all").onclick = getAllUsers
+export function setupAddEditHandlers() {
+  document.getElementById("btn-add-car").onclick = addCar
+  document.getElementById("btn-get-all").onclick = adminCarList
 }
 
-export function getAllUsers() {
-  console.log("Called")
-  fetch("https://jsonplaceholder.typicode.com/users")
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      const rows = data.map(u => `
-    <tr>
-      <td>${u.name} </td>
-      <td>${encode(u.phone)} </td>
-      <td>${encode(u.address.street)} </td>
-      <td>${encode(u.address.city)} </td>
-    </tr>
-    `).join("\n")
-      document.getElementById("tbl-body").innerHTML = rows;
-    })
-    .catch(err => console.error("UPPPPPS: " + err))
-    .finally(e => console.log("Finally Done"))
 
-}
+
+function addCar(){
+
+  console.log("Hey")
+  const car ={}
+    car.brand = document.getElementById("input-brand").value
+    car.model = document.getElementById("input-model").value
+    car.pricePrDay = document.getElementById("input-price-pr-day").value
+    car.bestDiscount = document.getElementById("input-discount").value
+
+    fetch(SERVER_URL,{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body : JSON.stringify(car)})
+      .then(res => res.json())
+      .then(newCar => console.log(newCar))
+
+
+    }
+
+    export function adminCarList(){
+        console.log("Called")
+        fetch(`${SERVER_URL}/admin`)
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            const rows = data.map(u => `
+          <tr>
+            <td>${encode(u.id)}</td>
+            <td>${encode(u.brand)}</td>
+            <td>${encode(u.model)}</td>
+            <td>${encode(u.pricePrDay)}</td>
+            <td>${encode(u.bestDiscount)}</td>
+            <td>${encode(u.created)}</td>
+            <td>${encode(u.updated)}</td>
+          </tr>
+          `).join("\n")
+            document.getElementById("car-admin-rows").innerHTML = rows;
+          })
+          .catch(err => console.error("UPPPPPS: " + err))
+          .finally(e => console.log("Finally Done"))
+      
+      }
+
+
+
+
+

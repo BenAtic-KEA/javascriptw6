@@ -1,6 +1,6 @@
 import { renderTemplate, setActive, showPage } from "./utils.js"
-import { setupP2Handlers } from "./js-for-pages/our-cars.js"
-import { setUpPage3Handlers, getAllUsers } from "./js-for-pages/add-edit-cars.js"
+import { setupAddEditHandlers, adminCarList } from "./js-for-pages/add-edit-cars.js"
+import { setUpOurCarsHandlers, getAllCars } from "./js-for-pages/our-cars.js"
 
 
 
@@ -15,28 +15,29 @@ function renderMenuItems(evt) {
       break
     }
     case "our-cars": {
-      setupP2Handlers()
+      getAllCars()
+      setUpOurCarsHandlers()
       break
     }
     case "add-edit-cars": {
-      setUpPage3Handlers()
-      getAllUsers()
+      adminCarList()
+      setupAddEditHandlers()
       break
     }
     case "sign-up": {
-      //sign up methods
+      //sign up functions
       break
     }
     case "my-details": {
-      //detail methods
+      //detail functions
       break
     }
     case "login": {
-      // login-logout methods
+      // login-logout functions
       break
     }
     case "logout": {
-      // login-logout methods
+      // login-logout functions
       break
     }
   }
