@@ -54,8 +54,3 @@ function addCar(){
           .finally(e => console.log("Finally Done"))
       
       }
-
-
-
-
-

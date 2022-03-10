@@ -1,6 +1,7 @@
 import { renderTemplate, setActive, showPage } from "./utils.js"
 import { setupAddEditHandlers, adminCarList } from "./js-for-pages/add-edit-cars.js"
 import { setUpOurCarsHandlers, getAllCars } from "./js-for-pages/our-cars.js"
+import { setupLoginHandlers, logout, updateLoginDependentComponents } from "./js-for-pages/login.js"
 
 
 
@@ -33,11 +34,11 @@ function renderMenuItems(evt) {
       break
     }
     case "login": {
-      // login-logout functions
+      setupLoginHandlers()
       break
     }
     case "logout": {
-      // login-logout functions
+      logout()
       break
     }
   }
@@ -46,6 +47,6 @@ function renderMenuItems(evt) {
 document.getElementById("menu").onclick = renderMenuItems;
 showPage("about") //Set the default page to render
 
-
+updateLoginDependentComponents()
 
 

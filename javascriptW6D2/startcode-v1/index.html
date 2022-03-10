@@ -25,13 +25,21 @@
       <ul id="menu" class="menu">
         <li><a id="about" href="#">About</a></li>
         <li><a id="our-cars" href="#">See our cars</a></li>
-        <li><a id="add-edit-cars" href="#">add/edit cars</a></li>
-        <li><a id="sign-up" href="#">Sign up as user</a></li>
-        <li><a id="my-details" href="#">My Details</a></li>
-        <li><a id="login-logout" href="#">Login</a></li>
+        <div id="logged-in-admin" style="display: none;">
+          <li><a id="add-edit-cars" href="#">Add/edit cars</a></li>
+        </div>
+        <div id="not-logged-in" style="display: block;">
+          <li><a id="sign-up" href="#">Sign up as user</a></li>
+        </div>
+        <div id="logged-in-user" style="display: none;">
+          <li><a id="my-details" href="#">My Details</a></li>
+        </div>
+        <li><a id="login" href="#">Login</a></li>
+        <li><a id="logout" href="#" style="display:none">Logout</a></li>
       </ul>
+      <p id="user-role"></p>
     </div>
-    <div id="content" style="margin-left:15px;"></div>
+    <div id="content" style="margin-left:15px;padding-top: 1em;"></div>
   </div>
 </body>
 
@@ -100,4 +108,21 @@
   <header>Only logged in users can see this, and </header>
 </template>
 
-<template data-id="login-logout"></template>
+<template data-id="login">
+  <div style="margin:150px;">
+    <p style="font-style: italic;">Right now you can only perform a DUMMY Login (no server involved),
+      either as a USER or as an ADMIN. This, just to see how the UI reflects your logged-in status (Anonymous, USER or
+      ADMIN
+    </p>
+    <h2>Login</h2>
+    <form>
+      <input placeholder="User Name" id="username" />
+      <input placeholder="Password" id="password" />
+      <div style="margin-top:1em;">
+        <button id="btn-login" class="btn btn-primary">Login (dummy login as USER)</button>
+        <br /><br />
+        <button id="btn-login2" class="btn btn-primary">Login (dummy login as ADMIN)</button>
+      </div>
+    </form>
+  </div>
+</template>
