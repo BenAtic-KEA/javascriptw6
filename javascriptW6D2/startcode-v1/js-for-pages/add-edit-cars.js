@@ -1,4 +1,5 @@
 import { encode } from "../utils.js"
+import { makeOptions } from "../fetchUtils.js"
 
 const SERVER_URL =  "http://localhost:8080/api/cars"
 
@@ -18,17 +19,9 @@ function addCar(){
     car.pricePrDay = document.getElementById("input-price-pr-day").value
     car.bestDiscount = document.getElementById("input-discount").value
 
-    fetch(SERVER_URL,{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body : JSON.stringify(car)})
+    fetch(SERVER_URL,makeOptions("POST",car,true))
       .then(res => res.json())
       .then(newCar => console.log(newCar))
-
-
     }
 
     export function adminCarList(){
